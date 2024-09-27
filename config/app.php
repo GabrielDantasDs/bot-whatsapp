@@ -123,4 +123,7 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'whatsapp_url' => env('WHATSAPP_URL', ''),
+    'whatsapp_auth' => env('WHATSAPP_BEARER', '')
+
 ];
