@@ -28,7 +28,6 @@ class MessageWebhook {
                     'to' =>  '55' . $phone,
                     "type" => "text",
                     "text" =>  [
-                        "preview_url" => "",
                         "body" => "Olá ". $name 
                     ]
                 ];
