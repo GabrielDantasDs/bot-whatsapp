@@ -113,11 +113,11 @@ class Utils {
                                 ],
                                 [
                                     "id" => "horarios",
-                                    "title" => "Horários de funcionamento",
+                                    "title" => "Horários",
                                 ],
                                 [
                                     "id" => "Filiais",
-                                    "title" => "Contato das filiais",
+                                    "title" => "Contatos",
                                 ],
                             ]
                         ]
