@@ -28,6 +28,8 @@ class Utils {
             error_log('error');
             throw new Exception('Erro no cURL: ' . curl_error($ch));
         }
+
+        error_log(json_encode($data));
         error_log(json_encode($response));
         // Fecha a conexão cURL
         curl_close($ch);

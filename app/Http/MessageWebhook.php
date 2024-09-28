@@ -20,9 +20,21 @@ class MessageWebhook {
 
             foreach ($messages as $message) {
                 //$phone = $message['from'];
-                $phone = '18981602270'; 
+                $phone = '18981602270';
+
+                $data = [
+                    "messaging_product" => "whatsapp",
+                    "recipient_type" =>  "individual",
+                    'to' =>  '+55' . $phone,
+                    "type" => "text",
+                    "text" =>  [
+                        "preview_url" => "",
+                        "body" => `Olá, ${name}`
+                    ]
+                ];
+
                 if ($message['type'] == 'text') {
-                    Utils::sendCurlRequest($phone, `Olá, {$name}`);
+                    Utils::sendCurlRequest($phone, $data);
                 }
 
                 if ($message['type'] == 'interactive') {
