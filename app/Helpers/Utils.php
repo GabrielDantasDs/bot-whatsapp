@@ -100,7 +100,7 @@ class Utils {
                     "text" => "Escolha uma opção para inicial"
                 ],
                 "body" => [
-                    "text" => ""
+                    "text" => "Escolha uma de nossas opções"
                 ],
                 "action" => [
                     "sections" => [
