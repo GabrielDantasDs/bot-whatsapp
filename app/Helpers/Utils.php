@@ -59,8 +59,6 @@ class Utils {
                     ]
                 ]
             ];  
-            
-            Utils::sendCurlRequest($phone, $data);
         }
 
         if ($id == 'uvaranas') {
@@ -107,7 +105,7 @@ class Utils {
                 "action" => [
                     "sections" => [
                         [
-                            "title" => "Unidades",
+                            "title" => "Opções",
                             "rows" => [
                                 [
                                     "id" => "ofertas",
@@ -133,7 +131,7 @@ class Utils {
     }
 
     static public function treatListReply($id, $phone) {
-        $possible_response_initial_list = ['ofertas', 'horarios', 'filiais'];
+        $possible_response_initial_list = ['ofertas', 'horarios', 'contatos'];
         $possible_reponse_filial_list = ['vila_estrela', 'uvaranas'];
 
         if (in_array($id, $possible_response_initial_list)) {
@@ -146,7 +144,7 @@ class Utils {
                 Utils::sendOpeningHours($phone);
             }
 
-            if ($id == 'filiais') {
+            if ($id == 'contatos') {
                 Utils::sendFiliaisList($phone);
             }
         }
