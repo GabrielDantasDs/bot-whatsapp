@@ -44,6 +44,7 @@ class MessageWebhook {
 
             return response('Sucesso', 200);
         } catch (Exception $erro) {
+            error_log('deu erro');
             error_log(json_encode($erro->getMessage()));
         }
     }
