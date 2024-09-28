@@ -32,7 +32,7 @@ class MessageWebhook {
                 ];
 
                 if ($message['type'] == 'text') {
-                    Utils::sendCurlRequest($phone, $data);
+                    Utils::sendFirstMessage($phone);
                 }
 
                 if ($message['type'] == 'interactive') {
