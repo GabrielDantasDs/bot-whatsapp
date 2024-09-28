@@ -116,8 +116,8 @@ class Utils {
                                     "title" => "🕐 Horários",
                                 ],
                                 [
-                                    "id" => "Filiais",
-                                    "title" => "📞 Contatos",
+                                    "id" => "contatos",
+                                    "title" => "📞 Contatos Unidades",
                                 ],
                             ]
                         ]
