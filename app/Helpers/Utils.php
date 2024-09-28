@@ -164,7 +164,7 @@ class Utils {
                 "type" => "text",
                 "text" =>  [
                   "preview_url" => "",
-                  "body" => $offers
+                  "body" => implode("\n", $offers)
                 ]
         ];
 
