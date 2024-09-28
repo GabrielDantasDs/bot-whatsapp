@@ -16,22 +16,14 @@ class MessageWebhook {
     public function handle(Request $request) {
         try {
             $messages = $request->entry[0]['changes'][0]['value']['messages'];
-            $name = $request->entry[0]['changes'][0]['value']['contacts'][0]['profile']['name'];
+
 
             foreach ($messages as $message) {
                 //$phone = $message['from'];
                 $phone = '18981602270';
 
-                $data = [
-                    "messaging_product" => "whatsapp",
-                    'to' =>  '55' . $phone,
-                    "type" => "text",
-                    "text" =>  [
-                        "body" => "Olá ". $name 
-                    ]
-                ];
-
                 if ($message['type'] == 'text') {
+                    $name = $request->entry[0]['changes'][0]['value']['contacts'][0]['profile']['name'];
                     Utils::sendFirstMessage($phone);
                 }
 
