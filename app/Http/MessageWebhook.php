@@ -27,7 +27,7 @@ class MessageWebhook {
                     'to' =>  '55' . $phone,
                     "type" => "text",
                     "text" =>  [
-                        "body" => "Olá ". $name 
+                        "body" => "Hello ". $name 
                     ]
                 ];
 
