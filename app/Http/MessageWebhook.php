@@ -16,15 +16,16 @@ class MessageWebhook {
     public function handle(Request $request) {
         try {
             $messages = $request->entry[0]['changes'][0]['value']['messages'];
+            $name = $request->entry[0]['changes'][0]['contacts'][0]['profile']['name'];
 
             foreach ($messages as $message) {
                 $phone = $message['from'];
                 if ($message['type'] == 'text') {
-                    Utils::sendCurlRequest($phone, 'Olá Gabriel');
+                    Utils::sendCurlRequest($phone, `Olá, {$name}`);
                 }
 
                 if ($message['type'] == 'interactive') {
-                    Utils::sendContact($message['interactive']['list_reply']['id'], $phone);
+                    Utils::treatListReply($message['interactive']['list_reply']['id'], $phone);
                 }
             }
 

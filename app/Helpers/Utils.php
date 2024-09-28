@@ -85,7 +85,108 @@ class Utils {
         Utils::sendCurlRequest($phone, $data);
     }
 
-    static public function sendFirstMessa($phone) {
+    static public function sendFirstMessage($phone) {
+        $data = [
+            'messaging_product' => 'whatsapp',
+            'recipient_type' => 'individual',
+            'to' =>  '+55' . $phone,
+            'type' => 'interactive',
+            "interactive" => [
+                "type" => "list",
+                "header" => [
+                    "type" => "text",
+                    "text" => "Escolha uma opção para inicial"
+                ],
+                "body" => [
+                    "text" => ""
+                ],
+                "action" => [
+                    "sections" => [
+                        [
+                            "title" => "Unidades",
+                            "rows" => [
+                                [
+                                    "id" => "ofertas",
+                                    "title" => "Ofertas",
+                                ],
+                                [
+                                    "id" => "horarios",
+                                    "title" => "Horários de funcionamento",
+                                ],
+                                [
+                                    "id" => "Filiais",
+                                    "title" => "Contato das filiais",
+                                ],
+                            ]
+                        ]
+                    ],
+                    "button" => "Escolher",
+                ]
+            ]
+        ];
+
+        Utils::sendCurlRequest($phone, $data);
+    }
+
+    static public function treatListReply($id, $phone) {
+        $possible_response_initial_list = ['ofertas', 'horarios', 'filiais'];
+        $possible_reponse_filial_list = ['vila_estrela', 'uvaranas'];
+
+        if (in_array($id, $possible_response_initial_list)) {
+            if ($id == 'ofertas') {
+                Utils::sendOffers($phone);
+            }
+
+            if ($id == 'horarios') {
+                Utils::sendOpeningHours($phone);
+            }
+
+            if ($id == 'filiais') {
+                Utils::sendFiliaisList($phone);
+            }
+        }
+
+        if (in_array($id, $possible_reponse_filial_list)) {
+            Utils::sendContact($id, $phone);
+        }
+    }
+    
+    static public function sendOffers($phone) {
+        $offers = [`Arroz São João - R$30,00`, `Feijão tropeiro - R$20,00`, `Filé de peito Sadia - R$19,99`];
+
+        $data = [
+            
+                "messaging_product" => "whatsapp",
+                "recipient_type" =>  "individual",
+                'to' =>  '+55' . $phone,
+                "type" => "text",
+                "text" =>  [
+                  "preview_url" => "",
+                  "body" => $offers
+                ]
+        ];
+
+        Utils::sendCurlRequest($phone, $data);
+    }
+
+    static public function sendOpeningHours($phone) {
+        $hours = ["Filial Vila estrela - 08:00h as 18:00h", "Filial Uvaranas - 09:00h as 20:00h"];
+
+        $data = [    
+            "messaging_product" => "whatsapp",
+            "recipient_type" =>  "individual",
+            'to' =>  '+55' . $phone,
+            "type" => "text",
+            "text" =>  [
+              "preview_url" => "",
+              "body" => $hours
+            ]
+    ];
+
+    Utils::sendCurlRequest($phone, $data);
+    }
+
+    static public function sendFiliaisList($phone) {
         $data = [
             'messaging_product' => 'whatsapp',
             'recipient_type' => 'individual',
