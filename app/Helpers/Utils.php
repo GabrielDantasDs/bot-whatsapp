@@ -155,7 +155,7 @@ class Utils {
     }
     
     static public function sendOffers($phone) {
-        $offers = [`Arroz São João - R$30,00`, `Feijão tropeiro - R$20,00`, `Filé de peito Sadia - R$19,99`];
+        $offers = ["Arroz São João - R$30,00", "Feijão tropeiro - R$20,00", "Filé de peito Sadia - R$19,99"];
 
         $data = [
                 "messaging_product" => "whatsapp",
@@ -164,7 +164,7 @@ class Utils {
                 "type" => "text",
                 "text" =>  [
                   "preview_url" => "",
-                  "body" => implode("\n", $offers)
+                  "body" => implode(",", $offers)
                 ]
         ];
 
