@@ -25,7 +25,7 @@ class MessageWebhook {
                 $data = [
                     "messaging_product" => "whatsapp",
                     "recipient_type" =>  "individual",
-                    'to' =>  '+55' . $phone,
+                    'to' =>  '55' . $phone,
                     "type" => "text",
                     "text" =>  [
                         "preview_url" => "",
