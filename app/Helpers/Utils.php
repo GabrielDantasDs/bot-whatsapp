@@ -58,7 +58,9 @@ class Utils {
                         ]
                     ]
                 ]
-            ];          
+            ];  
+            
+            Utils::sendCurlRequest($phone, $data);
         }
 
         if ($id == 'uvaranas') {
