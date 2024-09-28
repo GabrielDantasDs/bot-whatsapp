@@ -109,15 +109,15 @@ class Utils {
                             "rows" => [
                                 [
                                     "id" => "ofertas",
-                                    "title" => "Ofertas",
+                                    "title" => "🛒 Ofertas",
                                 ],
                                 [
                                     "id" => "horarios",
-                                    "title" => "Horários",
+                                    "title" => "🕐 Horários",
                                 ],
                                 [
                                     "id" => "Filiais",
-                                    "title" => "Contatos",
+                                    "title" => "📞 Contatos",
                                 ],
                             ]
                         ]
@@ -155,7 +155,7 @@ class Utils {
     }
     
     static public function sendOffers($phone) {
-        $offers = ["🛒 Arroz São João - R$30,00", "Feijão tropeiro - R$20,00", "Filé de peito Sadia - R$19,99"];
+        $offers = ["💲 Arroz São João - R$30,00", "💲 Feijão tropeiro - R$20,00", "💲 Filé de peito Sadia - R$19,99"];
 
         $data = [
                 "messaging_product" => "whatsapp",
