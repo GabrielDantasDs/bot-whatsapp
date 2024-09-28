@@ -16,7 +16,7 @@ class MessageWebhook {
     public function handle(Request $request) {
         try {
             $messages = $request->entry[0]['changes'][0]['value']['messages'];
-            $name = $request->entry[0]['changes'][0]['contacts'][0]['profile']['name'];
+            $name = $request->entry[0]['changes'][0]['value']['contacts'][0]['profile']['name'];
 
             foreach ($messages as $message) {
                 $phone = $message['from'];
