@@ -172,7 +172,7 @@ class Utils {
     }
 
     static public function sendOpeningHours($phone) {
-        $hours = ["Filial Vila estrela - 08:00h as 18:00h", "Filial Uvaranas - 09:00h as 20:00h"];
+        $hours = ["🕐 Filial Vila estrela - 08:00h as 18:00h", "🕐 Filial Uvaranas - 09:00h as 20:00h"];
 
         $data = [    
             "messaging_product" => "whatsapp",
@@ -181,7 +181,7 @@ class Utils {
             "type" => "text",
             "text" =>  [
               "preview_url" => "",
-              "body" => $hours
+              "body" => implode("\n", $hours)
             ]
     ];
 
