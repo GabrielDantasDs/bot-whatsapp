@@ -29,7 +29,7 @@ class MessageWebhook {
                     "type" => "text",
                     "text" =>  [
                         "preview_url" => "",
-                        "body" => `Olá, ${name}`
+                        "body" => "Olá ". $name 
                     ]
                 ];
 
