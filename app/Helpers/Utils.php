@@ -136,6 +136,7 @@ class Utils {
 
         if (in_array($id, $possible_response_initial_list)) {
             if ($id == 'ofertas') {
+                error_log('ofertas');
                 Utils::sendOffers($phone);
             }
 
@@ -157,7 +158,6 @@ class Utils {
         $offers = [`Arroz São João - R$30,00`, `Feijão tropeiro - R$20,00`, `Filé de peito Sadia - R$19,99`];
 
         $data = [
-            
                 "messaging_product" => "whatsapp",
                 "recipient_type" =>  "individual",
                 'to' =>  '+55' . $phone,
