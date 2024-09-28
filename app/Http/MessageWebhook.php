@@ -25,12 +25,9 @@ class MessageWebhook {
                 $data = [
                     "messaging_product" => "whatsapp",
                     'to' =>  '55' . $phone,
-                    "type" => "template",
-                    "template" => [
-                        "name" => "hello_world",
-                        "language" => [
-                            "code" => "en_US"
-                        ]
+                    "type" => "text",
+                    "text" =>  [
+                        "body" => "Hello ". $name 
                     ]
                 ];
 
